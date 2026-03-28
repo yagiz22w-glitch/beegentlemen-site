@@ -1,0 +1,1231 @@
+```html
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BeeGentlemen | Premium Oversize Collection</title>
+  <meta name="description" content="BeeGentlemen premium oversize tişört koleksiyonu. Sade, karakterli ve modern erkek stili.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    :root{
+      --bg:#070707;
+      --bg-soft:#0f0f0f;
+      --card:#151515;
+      --card-2:#101010;
+      --text:#f5e2a0;
+      --muted:#cfb46b;
+      --honey:#d4a437;
+      --honey-light:#e6bf62;
+      --honey-dark:#9a6d13;
+      --border:rgba(212,164,55,.22);
+    }
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(212,164,55,.08), transparent 22%),
+        linear-gradient(180deg,#040404 0%, #0a0a0a 100%);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{width:90%;max-width:1200px;margin:auto}
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:999;
+      background:rgba(8,8,8,.96);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--border);
+      box-shadow:0 8px 30px rgba(0,0,0,.35);
+    }
+
+    .navbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:16px 0;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .logo{display:flex;align-items:center}
+    .logo img{
+      height:110px;
+      width:auto;
+      max-width:380px;
+      object-fit:contain;
+      display:block;
+    }
+
+    .menu{
+      display:flex;
+      gap:22px;
+      flex-wrap:wrap;
+    }
+
+    .menu a{
+      color:var(--text);
+      font-size:15px;
+      transition:.3s;
+      font-weight:500;
+    }
+
+    .menu a:hover{
+      color:var(--honey-light);
+    }
+
+    .hero{
+      padding:90px 0 70px;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(212,164,55,.12), transparent 18%),
+        linear-gradient(180deg,#080808 0%, #111111 100%);
+    }
+
+    .hero-content{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:40px;
+      align-items:center;
+    }
+
+    .hero-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 16px;
+      border-radius:999px;
+      background:rgba(212,164,55,.08);
+      border:1px solid var(--border);
+      color:var(--honey-light);
+      margin-bottom:18px;
+      font-size:14px;
+      font-weight:700;
+    }
+
+    .hero-text h1{
+      font-size:clamp(42px,6vw,74px);
+      line-height:1.03;
+      font-family:'Playfair Display',serif;
+      margin-bottom:20px;
+      color:var(--honey-light);
+      text-shadow:0 0 18px rgba(212,164,55,.08);
+    }
+
+    .hero-text p{
+      color:var(--muted);
+      font-size:18px;
+      max-width:580px;
+      margin-bottom:28px;
+    }
+
+    .hero-buttons{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-bottom:28px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:13px 22px;
+      border-radius:999px;
+      font-weight:700;
+      transition:.3s;
+      border:none;
+      cursor:pointer;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,var(--honey),var(--honey-light));
+      color:#111;
+      box-shadow:0 10px 24px rgba(212,164,55,.22);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-2px);
+      background:linear-gradient(135deg,var(--honey-light),#f0c45a);
+    }
+
+    .btn-secondary{
+      border:1px solid var(--border);
+      color:var(--honey-light);
+      background:transparent;
+    }
+
+    .btn-secondary:hover{
+      border-color:var(--honey-light);
+      background:rgba(212,164,55,.08);
+    }
+
+    .hero-points{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(120px,1fr));
+      gap:14px;
+      max-width:680px;
+    }
+
+    .hero-point{
+      background:linear-gradient(145deg,#151515,#0f0f0f);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:16px;
+    }
+
+    .hero-point strong{
+      display:block;
+      color:var(--honey-light);
+      font-size:16px;
+      margin-bottom:6px;
+    }
+
+    .hero-point span{
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .hero-image{
+      background:linear-gradient(145deg,#141414,#0d0d0d);
+      padding:18px;
+      border-radius:28px;
+      border:1px solid var(--border);
+      box-shadow:0 15px 50px rgba(0,0,0,.4);
+    }
+
+    .hero-image img{
+      width:100%;
+      height:560px;
+      object-fit:contain;
+      background:#0b0b0b;
+      border-radius:18px;
+      padding:12px;
+    }
+
+    .section{padding:80px 0}
+    .section-title{text-align:center;margin-bottom:40px}
+    .section-title h2{
+      font-size:42px;
+      font-family:'Playfair Display',serif;
+      margin-bottom:10px;
+      color:var(--honey-light);
+    }
+    .section-title p{
+      color:var(--muted);
+      max-width:700px;
+      margin:auto;
+    }
+
+    .benefits{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
+    }
+
+    .benefit-card{
+      background:linear-gradient(145deg,#161616,#101010);
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:24px;
+      transition:.3s;
+    }
+
+    .benefit-card:hover{
+      transform:translateY(-5px);
+      box-shadow:0 15px 35px rgba(0,0,0,.25);
+    }
+
+    .benefit-icon{
+      width:52px;
+      height:52px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:14px;
+      background:rgba(212,164,55,.10);
+      color:var(--honey-light);
+      font-size:22px;
+      margin-bottom:16px;
+      border:1px solid var(--border);
+    }
+
+    .benefit-card h3{
+      color:var(--honey-light);
+      margin-bottom:8px;
+      font-size:20px;
+    }
+
+    .benefit-card p{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .products{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:24px;
+    }
+
+    .card{
+      background:linear-gradient(145deg,#161616,#101010);
+      border:1px solid var(--border);
+      border-radius:22px;
+      overflow:hidden;
+      transition:.3s;
+      cursor:pointer;
+      box-shadow:0 10px 24px rgba(0,0,0,.22);
+    }
+
+    .card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 18px 38px rgba(0,0,0,.35);
+      border-color:rgba(212,164,55,.42);
+    }
+
+    .card-images{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:8px;
+      padding:12px;
+      background:#0b0b0b;
+    }
+
+    .card-images.single{grid-template-columns:1fr}
+
+    .card-images img{
+      width:100%;
+      height:220px;
+      object-fit:contain;
+      background:#111;
+      border-radius:14px;
+      padding:8px;
+      border:1px solid rgba(212,164,55,.10);
+    }
+
+    .card-body{padding:20px}
+    .card-body h3{
+      font-size:22px;
+      margin-bottom:8px;
+      color:var(--honey-light);
+    }
+    .card-body p{
+      color:var(--muted);
+      font-size:14px;
+      margin-bottom:14px;
+    }
+
+    .tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:16px;
+    }
+
+    .tag{
+      background:#1f1a0d;
+      padding:7px 12px;
+      border-radius:999px;
+      font-size:13px;
+      color:var(--honey-light);
+      border:1px solid rgba(212,164,55,.18);
+    }
+
+    .price-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .price{
+      color:var(--honey-light);
+      font-size:24px;
+      font-weight:700;
+    }
+
+    .detail-wrap{display:none}
+
+    .detail-box{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:30px;
+      background:linear-gradient(145deg,#161616,#101010);
+      border:1px solid var(--border);
+      border-radius:24px;
+      overflow:hidden;
+    }
+
+    .detail-gallery{
+      background:#0b0b0b;
+      padding:20px;
+    }
+
+    .detail-main-img{
+      width:100%;
+      height:500px;
+      object-fit:contain;
+      background:#111;
+      border-radius:16px;
+      padding:10px;
+      margin-bottom:12px;
+      border:1px solid rgba(212,164,55,.12);
+    }
+
+    .thumbs{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .thumbs img{
+      width:90px;
+      height:90px;
+      object-fit:contain;
+      background:#111;
+      border-radius:12px;
+      padding:6px;
+      cursor:pointer;
+      border:2px solid transparent;
+    }
+
+    .thumbs img:hover{
+      border-color:var(--honey);
+    }
+
+    .detail-content{
+      padding:30px;
+    }
+
+    .detail-content h2{
+      font-size:36px;
+      margin-bottom:10px;
+      font-family:'Playfair Display',serif;
+      color:var(--honey-light);
+    }
+
+    .detail-content p{
+      color:var(--muted);
+      margin-bottom:18px;
+    }
+
+    .size-title,.qty-title{
+      margin-bottom:10px;
+      font-weight:600;
+      color:var(--honey-light);
+    }
+
+    .sizes{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:22px;
+    }
+
+    .size-btn{
+      padding:10px 18px;
+      border-radius:999px;
+      border:1px solid rgba(212,164,55,.28);
+      background:transparent;
+      color:var(--honey-light);
+      cursor:pointer;
+      transition:.3s;
+    }
+
+    .size-btn.active,.size-btn:hover{
+      background:linear-gradient(135deg,var(--honey),var(--honey-light));
+      color:#111;
+      border-color:var(--honey-light);
+    }
+
+    .qty-row{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom:22px;
+      flex-wrap:wrap;
+    }
+
+    .qty-btn{
+      width:42px;
+      height:42px;
+      border-radius:12px;
+      border:none;
+      cursor:pointer;
+      background:#211a0c;
+      color:var(--honey-light);
+      font-size:20px;
+      font-weight:700;
+      border:1px solid rgba(212,164,55,.22);
+    }
+
+    .qty-value{
+      min-width:60px;
+      text-align:center;
+      padding:10px 14px;
+      background:#111;
+      border:1px solid rgba(212,164,55,.18);
+      border-radius:12px;
+      font-weight:700;
+      color:var(--honey-light);
+    }
+
+    .detail-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .msg{
+      margin-top:16px;
+      padding:12px 14px;
+      border-radius:12px;
+      display:none;
+      font-size:14px;
+      font-weight:600;
+    }
+
+    .msg.error{
+      background:#2a1611;
+      color:#ffcc9f;
+      border:1px solid #6f431d;
+    }
+
+    .msg.success{
+      background:#1f2212;
+      color:#f7db83;
+      border:1px solid #6a5b1d;
+    }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+    }
+
+    .about-box,
+    .faq-box,
+    .cart-box{
+      background:linear-gradient(145deg,#161616,#101010);
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:28px;
+    }
+
+    .about-box h3,
+    .faq-box h3{
+      color:var(--honey-light);
+      font-size:28px;
+      margin-bottom:14px;
+      font-family:'Playfair Display',serif;
+    }
+
+    .about-box p{
+      color:var(--muted);
+      margin-bottom:10px;
+    }
+
+    .faq-item{
+      padding:14px 0;
+      border-bottom:1px solid rgba(212,164,55,.12);
+    }
+
+    .faq-item:last-child{
+      border-bottom:none;
+    }
+
+    .faq-item strong{
+      display:block;
+      color:var(--honey-light);
+      margin-bottom:6px;
+    }
+
+    .faq-item span{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .cart-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-bottom:18px;
+    }
+
+    .cart-box h2{
+      font-family:'Playfair Display',serif;
+      font-size:34px;
+      color:var(--honey-light);
+    }
+
+    .cart-empty{color:var(--muted)}
+    .cart-items{display:grid;gap:14px}
+
+    .cart-item{
+      display:grid;
+      grid-template-columns:80px 1fr auto auto auto;
+      gap:14px;
+      align-items:center;
+      background:#111;
+      border:1px solid rgba(212,164,55,.12);
+      padding:12px;
+      border-radius:16px;
+    }
+
+    .cart-item img{
+      width:80px;
+      height:80px;
+      object-fit:contain;
+      background:#0c0c0c;
+      border-radius:12px;
+      padding:6px;
+      border:1px solid rgba(212,164,55,.12);
+    }
+
+    .cart-name{font-weight:700;color:var(--honey-light)}
+    .cart-meta{font-size:14px;color:var(--muted)}
+    .cart-price{color:var(--honey-light);font-weight:700}
+
+    .remove-btn{
+      background:#2a1611;
+      color:#f4c47c;
+      border:1px solid #6f431d;
+      padding:10px 14px;
+      border-radius:999px;
+      cursor:pointer;
+    }
+
+    .cart-total{
+      margin-top:18px;
+      padding-top:18px;
+      border-top:1px solid rgba(212,164,55,.15);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      color:var(--honey-light);
+    }
+
+    .cart-total strong{
+      font-size:24px;
+      color:var(--honey-light);
+    }
+
+    .cart-actions{display:flex;gap:10px;flex-wrap:wrap}
+    .cart-note{
+      margin-top:16px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    footer{
+      border-top:1px solid var(--border);
+      padding:50px 0 25px;
+      margin-top:20px;
+      background:#080808;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr 1fr;
+      gap:24px;
+      margin-bottom:30px;
+    }
+
+    .footer-col h4{
+      color:var(--honey-light);
+      margin-bottom:14px;
+      font-size:18px;
+    }
+
+    .footer-col p,
+    .footer-col a{
+      color:var(--muted);
+      font-size:14px;
+      display:block;
+      margin-bottom:8px;
+    }
+
+    .footer-bottom{
+      border-top:1px solid rgba(212,164,55,.12);
+      padding-top:18px;
+      text-align:center;
+      color:#cfae57;
+      font-size:14px;
+    }
+
+    @media(max-width:900px){
+      .hero-content,
+      .detail-box,
+      .about-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-image img{height:420px}
+      .cart-item{grid-template-columns:70px 1fr}
+      .footer-grid{grid-template-columns:1fr 1fr}
+      .hero-points{grid-template-columns:1fr}
+    }
+
+    @media(max-width:600px){
+      .navbar,.menu{justify-content:center}
+      .hero{padding-top:60px}
+
+      .section-title h2,
+      .detail-content h2,
+      .cart-box h2{
+        font-size:32px;
+      }
+
+      .card-images{grid-template-columns:1fr}
+
+      .logo{
+        width:100%;
+        justify-content:center;
+      }
+
+      .logo img{
+        height:85px;
+        max-width:300px;
+      }
+
+      .footer-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container navbar">
+      <div class="logo">
+        <img src="logo.png" alt="BeeGentlemen Logo" onerror="this.style.display='none'">
+      </div>
+
+      <nav class="menu">
+        <a href="#anasayfa">Ana Sayfa</a>
+        <a href="#avantajlar">Avantajlar</a>
+        <a href="#urunler">Ürünler</a>
+        <a href="#sepet">Sepet</a>
+        <a href="#hakkimizda">Hakkımızda</a>
+        <a href="#sss">SSS</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="anasayfa">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <div class="hero-badge">Yeni Sezon • Premium Oversize Collection</div>
+        <h1>Modern stilin en sade hali</h1>
+        <p>
+          BeeGentlemen; karakterli görünümü, premium kumaşı ve oversize rahatlığı bir araya getirir.
+          Günlük stile güçlü ve sade bir dokunuş katmak isteyenler için tasarlandı.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#urunler" class="btn btn-primary">Koleksiyonu İncele</a>
+          <a href="https://www.instagram.com/beegentlemen/" target="_blank" class="btn btn-secondary">Instagram</a>
+        </div>
+
+        <div class="hero-points">
+          <div class="hero-point">
+            <strong>Premium Kumaş</strong>
+            <span>Gün boyu konforlu kullanım</span>
+          </div>
+          <div class="hero-point">
+            <strong>Oversize Kalıp</strong>
+            <span>Modern ve rahat görünüm</span>
+          </div>
+          <div class="hero-point">
+            <strong>Güvenli Ödeme</strong>
+            <span>Shopier ile kolay alışveriş</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="siyah-on.jpg" alt="BeeGentlemen Hero Ürün">
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="avantajlar">
+    <div class="container">
+      <div class="section-title">
+        <h2>Neden BeeGentlemen?</h2>
+        <p>Markamızı öne çıkaran detaylar; kalite, sade tasarım ve güçlü duruş.</p>
+      </div>
+
+      <div class="benefits">
+        <div class="benefit-card">
+          <div class="benefit-icon">★</div>
+          <h3>Premium Görünüm</h3>
+          <p>Sade ama dikkat çekici tasarımlar ile günlük stile modern bir dokunuş sunar.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">✓</div>
+          <h3>Oversize Konfor</h3>
+          <p>Rahat kalıp sayesinde hem şık hem de gün boyu konforlu bir kullanım sağlar.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">⚡</div>
+          <h3>Kolay Alışveriş</h3>
+          <p>Beğendiğin ürünü detaylı görüntüle, bedenini seç ve hızlıca satın al.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">♛</div>
+          <h3>Karakterli Stil</h3>
+          <p>BeeGentlemen; sadece tişört değil, güçlü bir duruş ve sade bir stil sunar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="urunler">
+    <div class="container">
+      <div class="section-title">
+        <h2>Koleksiyon</h2>
+        <p>Ürüne tıkla, detayını aç, beden ve adet seçip sepete ekle ya da Shopier ile satın al.</p>
+      </div>
+
+      <div class="products">
+        <div class="card" onclick="openProduct({
+          id:'siyah-logo',
+          name:'Oversize Siyah Tshirt',
+          price:599,
+          desc:'Minimal ön logo ve arka yaka detayıyla modern bir siyah oversize tişört.',
+          images:['siyah-on.jpg','siyah-arka.jpg']
+        })">
+          <div class="card-images">
+            <img src="siyah-on.jpg" alt="Oversize Siyah Tshirt Ön">
+            <img src="siyah-arka.jpg" alt="Oversize Siyah Tshirt Arka">
+          </div>
+          <div class="card-body">
+            <h3>Oversize Siyah Tshirt</h3>
+            <p>Minimal ön logo ve arka yaka detayıyla modern bir siyah oversize tişört.</p>
+            <div class="tags">
+              <span class="tag">Oversize Kalıp</span>
+              <span class="tag">M, L, XL</span>
+            </div>
+            <div class="price-row">
+              <div class="price">599 TL</div>
+              <span class="btn btn-primary">Detayı Aç</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" onclick="openProduct({
+          id:'beyaz-logo',
+          name:'Oversize Beyaz Tshirt',
+          price:599,
+          desc:'Sade çizgileri ve rahat oversize kalıbıyla öne çıkan beyaz premium tişört.',
+          images:['beyaz-on.jpg','beyaz-arka.jpg']
+        })">
+          <div class="card-images">
+            <img src="beyaz-on.jpg" alt="Oversize Beyaz Tshirt Ön">
+            <img src="beyaz-arka.jpg" alt="Oversize Beyaz Tshirt Arka">
+          </div>
+          <div class="card-body">
+            <h3>Oversize Beyaz Tshirt</h3>
+            <p>Sade çizgileri ve rahat oversize kalıbıyla öne çıkan beyaz premium tişört.</p>
+            <div class="tags">
+              <span class="tag">Oversize Kalıp</span>
+              <span class="tag">M, L, XL</span>
+            </div>
+            <div class="price-row">
+              <div class="price">599 TL</div>
+              <span class="btn btn-primary">Detayı Aç</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" onclick="openProduct({
+          id:'bej-oversize',
+          name:'Oversize Bej Tshirt',
+          price:649,
+          desc:'Sade tasarımın güçlü hali. Yumuşak pamuklu kumaşı sayesinde gün boyu rahat kullanım sunar.',
+          images:['bej-oversize.jpg']
+        })">
+          <div class="card-images single">
+            <img src="bej-oversize.jpg" alt="Oversize Bej Tshirt">
+          </div>
+          <div class="card-body">
+            <h3>Oversize Bej Tshirt</h3>
+            <p>Sade tasarımın güçlü hali. Yumuşak pamuklu kumaşı sayesinde gün boyu rahat kullanım sunar.</p>
+            <div class="tags">
+              <span class="tag">Oversize Kalıp</span>
+              <span class="tag">M, L, XL</span>
+            </div>
+            <div class="price-row">
+              <div class="price">649 TL</div>
+              <span class="btn btn-primary">Detayı Aç</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" onclick="openProduct({
+          id:'ozel-seri',
+          name:'Özel Seri Tshirt',
+          price:649,
+          desc:'Şıklığı ve konforu bir arada sunan siyah tasarım tişört. Yüksek kaliteli kumaşı sayesinde yumuşak dokunuş sağlar ve gün boyu rahat kullanım sunar. Dayanıklı baskı teknolojisi ile tasarım uzun süre canlılığını korur. Günlük kullanım için ideal olan bu tişört, sade ve modern tarzıyla her kombine kolayca uyum sağlar. Hem rahatlığı hem de şıklığı aynı anda yaşamak isteyenler için tasarlandı.',
+          images:['ozel-seri-on.jpg','ozel-seri-arka.jpg']
+        })">
+          <div class="card-images">
+            <img src="ozel-seri-on.jpg" alt="Özel Seri Tshirt Ön">
+            <img src="ozel-seri-arka.jpg" alt="Özel Seri Tshirt Arka">
+          </div>
+          <div class="card-body">
+            <h3>Özel Seri Tshirt</h3>
+            <p>Şıklığı ve konforu bir arada sunan siyah tasarım tişört.</p>
+            <div class="tags">
+              <span class="tag">Oversize Kalıp</span>
+              <span class="tag">M, L, XL</span>
+            </div>
+            <div class="price-row">
+              <div class="price">649 TL</div>
+              <span class="btn btn-primary">Detayı Aç</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section detail-wrap" id="urun-detay">
+    <div class="container">
+      <div class="section-title">
+        <h2>Ürün Detayı</h2>
+        <p>Seçtiğin ürün burada görüntülenir.</p>
+      </div>
+
+      <div class="detail-box">
+        <div class="detail-gallery">
+          <img id="mainImage" class="detail-main-img" src="" alt="Ürün Görseli">
+          <div class="thumbs" id="thumbs"></div>
+        </div>
+
+        <div class="detail-content">
+          <h2 id="productName"></h2>
+          <div class="price" id="productPrice"></div>
+          <p id="productDesc"></p>
+
+          <div class="size-title">Beden Seç:</div>
+          <div class="sizes">
+            <button class="size-btn" onclick="selectSize(this)">M</button>
+            <button class="size-btn" onclick="selectSize(this)">L</button>
+            <button class="size-btn" onclick="selectSize(this)">XL</button>
+          </div>
+
+          <div class="qty-title">Adet:</div>
+          <div class="qty-row">
+            <button class="qty-btn" onclick="changeQty(-1)">-</button>
+            <div class="qty-value" id="qtyValue">1</div>
+            <button class="qty-btn" onclick="changeQty(1)">+</button>
+          </div>
+
+          <div class="detail-actions">
+            <button class="btn btn-primary" onclick="addToCart()">Sepete Ekle</button>
+            <button class="btn btn-primary" onclick="buyNowShopier()">Şimdi Satın Al</button>
+            <button class="btn btn-secondary" onclick="closeProduct()">Kapat</button>
+          </div>
+
+          <div id="messageBox" class="msg"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="sepet">
+    <div class="container">
+      <div class="cart-box">
+        <div class="cart-header">
+          <h2>Sepet</h2>
+          <div class="cart-actions">
+            <button class="btn btn-secondary" onclick="clearCart()">Sepeti Temizle</button>
+          </div>
+        </div>
+        <div id="cartContent">
+          <p class="cart-empty">Sepetiniz şu anda boş.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="hakkimizda">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-box">
+          <h3>BeeGentlemen Hakkında</h3>
+          <p>BeeGentlemen, modern erkek giyimini sade ama karakterli bir çizgide sunmak için kuruldu.</p>
+          <p>Her tasarımımız; rahat kalıp, kaliteli kumaş ve günlük stile uyum sağlayan premium görünüm anlayışıyla hazırlanır.</p>
+          <p>Amacımız sadece bir tişört sunmak değil; tarzı olan erkekler için güçlü bir duruş oluşturmaktır.</p>
+        </div>
+
+        <div class="faq-box" id="sss">
+          <h3>Sık Sorulan Sorular</h3>
+
+          <div class="faq-item">
+            <strong>Kalıp nasıl?</strong>
+            <span>Tüm modeller oversize kalıptır. Rahat ve modern görünüm sunar.</span>
+          </div>
+
+          <div class="faq-item">
+            <strong>Hangi bedenler var?</strong>
+            <span>Şu anda M, L ve XL beden seçenekleri bulunmaktadır.</span>
+          </div>
+
+          <div class="faq-item">
+            <strong>Ödeme güvenli mi?</strong>
+            <span>Evet. Satın alma işlemleri Shopier üzerinden güvenli şekilde gerçekleşir.</span>
+          </div>
+
+          <div class="faq-item">
+            <strong>Günlük kullanıma uygun mu?</strong>
+            <span>Evet. Kumaş ve kalıp yapısı günlük kullanım için konforlu olacak şekilde seçilmiştir.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>BeeGentlemen</h4>
+          <p>Premium oversize tişört koleksiyonu ile sade, güçlü ve modern erkek stilini yeniden yorumluyoruz.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Menü</h4>
+          <a href="#anasayfa">Ana Sayfa</a>
+          <a href="#avantajlar">Avantajlar</a>
+          <a href="#urunler">Ürünler</a>
+          <a href="#hakkimizda">Hakkımızda</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Bilgilendirme</h4>
+          <a href="#">Kargo ve Teslimat</a>
+          <a href="#">İade ve Değişim</a>
+          <a href="#">Gizlilik Politikası</a>
+          <a href="#">Mesafeli Satış Sözleşmesi</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Sosyal</h4>
+          <a href="https://www.instagram.com/beegentlemen/" target="_blank">Instagram</a>
+          <a href="#sepet">Sepet</a>
+          <a href="#sss">Sık Sorulan Sorular</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © 2025 BeeGentlemen - Tüm hakları saklıdır.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const shopierLinks = {
+      "siyah-logo": "https://www.shopier.com/beegentlemen/45183680",
+      "beyaz-logo": "https://www.shopier.com/beegentlemen/45182241",
+      "bej-oversize": "https://www.shopier.com/beegentlemen/45191470",
+      "ozel-seri": "https://www.shopier.com/beegentlemen/45269852"
+    };
+
+    let currentProduct = null;
+    let selectedSize = null;
+    let currentQty = 1;
+    let cart = JSON.parse(localStorage.getItem("beegentlemen_cart")) || [];
+
+    function saveCart() {
+      localStorage.setItem("beegentlemen_cart", JSON.stringify(cart));
+    }
+
+    function openProduct(product) {
+      currentProduct = product;
+      selectedSize = null;
+      currentQty = 1;
+
+      document.getElementById("productName").innerText = product.name;
+      document.getElementById("productPrice").innerText = product.price + " TL";
+      document.getElementById("productDesc").innerText = product.desc;
+      document.getElementById("mainImage").src = product.images[0];
+      document.getElementById("qtyValue").innerText = "1";
+
+      const thumbs = document.getElementById("thumbs");
+      thumbs.innerHTML = "";
+
+      product.images.forEach(img => {
+        const image = document.createElement("img");
+        image.src = img;
+        image.onclick = function () {
+          document.getElementById("mainImage").src = img;
+        };
+        thumbs.appendChild(image);
+      });
+
+      document.querySelectorAll(".size-btn").forEach(btn => btn.classList.remove("active"));
+      hideMessage();
+
+      const detail = document.getElementById("urun-detay");
+      detail.style.display = "block";
+      detail.scrollIntoView({ behavior: "smooth" });
+    }
+
+    function closeProduct() {
+      document.getElementById("urun-detay").style.display = "none";
+      hideMessage();
+    }
+
+    function selectSize(button) {
+      document.querySelectorAll(".size-btn").forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
+      selectedSize = button.innerText;
+      hideMessage();
+    }
+
+    function changeQty(amount) {
+      currentQty += amount;
+      if (currentQty < 1) currentQty = 1;
+      document.getElementById("qtyValue").innerText = currentQty;
+    }
+
+    function showMessage(text, type) {
+      const box = document.getElementById("messageBox");
+      box.innerText = text;
+      box.className = "msg " + type;
+      box.style.display = "block";
+    }
+
+    function hideMessage() {
+      const box = document.getElementById("messageBox");
+      box.style.display = "none";
+    }
+
+    function addToCart() {
+      if (!currentProduct) return;
+
+      if (!selectedSize) {
+        showMessage("Lütfen önce bir beden seçin.", "error");
+        return;
+      }
+
+      const existing = cart.find(item => item.id === currentProduct.id && item.size === selectedSize);
+
+      if (existing) {
+        existing.qty += currentQty;
+      } else {
+        cart.push({
+          id: currentProduct.id,
+          name: currentProduct.name,
+          price: currentProduct.price,
+          size: selectedSize,
+          qty: currentQty,
+          image: currentProduct.images[0]
+        });
+      }
+
+      saveCart();
+      showMessage("Ürün sepete eklendi.", "success");
+      renderCart();
+      document.getElementById("sepet").scrollIntoView({ behavior: "smooth" });
+    }
+
+    function buyNowShopier() {
+      if (!currentProduct) return;
+
+      if (!selectedSize) {
+        showMessage("Shopier'a gitmeden önce lütfen beden seçin.", "error");
+        return;
+      }
+
+      const link = shopierLinks[currentProduct.id];
+
+      if (!link) {
+        showMessage("Bu ürün için Shopier linki bulunamadı.", "error");
+        return;
+      }
+
+      window.open(link, "_blank");
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      saveCart();
+      renderCart();
+    }
+
+    function clearCart() {
+      cart = [];
+      saveCart();
+      renderCart();
+    }
+
+    function renderCart() {
+      const cartContent = document.getElementById("cartContent");
+
+      if (cart.length === 0) {
+        cartContent.innerHTML = '<p class="cart-empty">Sepetiniz şu anda boş.</p>';
+        return;
+      }
+
+      let total = 0;
+      let html = '<div class="cart-items">';
+
+      cart.forEach((item, index) => {
+        const itemTotal = item.price * item.qty;
+        total += itemTotal;
+        const productLink = shopierLinks[item.id] || "#";
+
+        html += `
+          <div class="cart-item">
+            <img src="${item.image}" alt="${item.name}">
+            <div>
+              <div class="cart-name">${item.name}</div>
+              <div class="cart-meta">Beden: ${item.size}</div>
+              <div class="cart-meta">Adet: ${item.qty}</div>
+            </div>
+            <div class="cart-price">${item.price} TL</div>
+            <div class="cart-price">Toplam: ${itemTotal} TL</div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              <a href="${productLink}" target="_blank" class="btn btn-primary" style="padding:10px 16px;">Satın Al</a>
+              <button class="remove-btn" onclick="removeFromCart(${index})">Sil</button>
+            </div>
+          </div>
+        `;
+      });
+
+      html += `</div>
+        <div class="cart-total">
+          <span>Genel Toplam</span>
+          <strong>${total} TL</strong>
+        </div>
+        <div class="cart-note">
+          Sepetteki ürünleri ilgili <strong style="color: var(--honey-light);">Satın Al</strong> butonları üzerinden Shopier ile tamamlayabilirsiniz.
+        </div>`;
+
+      cartContent.innerHTML = html;
+    }
+
+    renderCart();
+  </script>
+
+</body>
+</html>
+```
